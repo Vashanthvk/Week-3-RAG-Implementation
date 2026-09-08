@@ -1,0 +1,35 @@
+{
+  "evaluation": {
+    "name": "Week 6 Legal Contract RAG Regression Benchmark",
+    "timestamp": "2026-09-07T20:17:33.261241",
+    "question_set": "evaluation_questions.json"
+  },
+  "problem_type_scores": {
+    "answer_correctness": {
+      "passed": 20,
+      "total": 20,
+      "score": 100.0
+    },
+    "source_attribution": {
+      "passed": 16,
+      "total": 16,
+      "score": 100.0
+    },
+    "unsupported_refusal": {
+      "passed": 4,
+      "total": 4,
+      "score": 100.0
+    },
+    "combined_answer_source": {
+      "passed": 16,
+      "total": 16,
+      "score": 100.0
+    },
+    "answerable_cases": {
+      "passed": 16,
+      "total": 16,
+      "score": 100.0
+    }
+  },
+  "failure_distribution": {}
+}

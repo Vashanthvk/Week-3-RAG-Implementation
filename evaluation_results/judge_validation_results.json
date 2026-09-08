@@ -1,0 +1,47 @@
+{
+  "evaluation": "week6_judge_validation_results",
+  "source_file": "/mnt/data/judge_human_validation_filled.json",
+  "cases": 20,
+  "summary": {
+    "correctness": {
+      "llm_average": 8.5,
+      "human_average": 10.0,
+      "mean_absolute_error": 1.5,
+      "exact_agreement_pct": 0.0,
+      "within_1_pct": 50.0,
+      "average_bias_llm_minus_human": -1.5,
+      "pearson_correlation": null
+    },
+    "grounding": {
+      "llm_average": 7.75,
+      "human_average": 9.85,
+      "mean_absolute_error": 2.1,
+      "exact_agreement_pct": 5.0,
+      "within_1_pct": 25.0,
+      "average_bias_llm_minus_human": -2.1,
+      "pearson_correlation": 0.216
+    },
+    "source_attribution": {
+      "llm_average": 7.8,
+      "human_average": 9.6,
+      "mean_absolute_error": 2.5,
+      "exact_agreement_pct": 10.0,
+      "within_1_pct": 30.0,
+      "average_bias_llm_minus_human": -1.8,
+      "pearson_correlation": -0.245
+    },
+    "overall": {
+      "llm_average": 7.85,
+      "human_average": 9.7,
+      "mean_absolute_error": 2.05,
+      "exact_agreement_pct": 0.0,
+      "within_1_pct": 15.0,
+      "average_bias_llm_minus_human": -1.85,
+      "pearson_correlation": 0.326
+    }
+  },
+  "interpretation": {
+    "overall_assessment": "The LLM judge is directionally useful but should not be treated as a standalone authoritative evaluator because the validation set shows disagreement, especially around source attribution and the unsupported/refusal cases.",
+    "recommended_use": "Use deterministic assertions as the primary pass/fail gate and use the LLM judge as a secondary qualitative signal."
+  }
+}

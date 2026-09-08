@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "question": "What is the annual salary of the employee?",
+    "expected_answer": "USD 72,000",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 2,
+    "question": "What is the notice period for an employee?",
+    "expected_answer": "30 calendar days' written notice",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 3,
+    "question": "How many paid annual leave days does the employee receive each year?",
+    "expected_answer": "18 paid annual leave days",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 4,
+    "question": "How many sick leave days does the employee receive each year?",
+    "expected_answer": "10 sick leave days",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 5,
+    "question": "How long must the employee maintain confidentiality after leaving?",
+    "expected_answer": "2 years after leaving",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 6,
+    "question": "What are the reasons the employment agreement may be terminated?",
+    "expected_answer": "Misconduct, breach of contract, or mutual agreement",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 7,
+    "question": "What is the monthly rent in the lease agreement?",
+    "expected_answer": "USD 1,500",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 8,
+    "question": "When must the monthly rent be paid?",
+    "expected_answer": "Before the 5th of each month",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 9,
+    "question": "What is the security deposit for the property?",
+    "expected_answer": "USD 3,000",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 10,
+    "question": "What is the lease period?",
+    "expected_answer": "1 January 2026 to 31 December 2026",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 11,
+    "question": "Who is responsible for structural repairs in the lease agreement?",
+    "expected_answer": "The landlord",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 12,
+    "question": "What is the lease termination notice period?",
+    "expected_answer": "60 days' written notice",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 13,
+    "question": "Which contract has a 30-day notice period?",
+    "expected_answer": "Employment Agreement",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 14,
+    "question": "Which contract has a 60-day termination notice period?",
+    "expected_answer": "Residential Lease Agreement",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 15,
+    "question": "Which agreement contains a security deposit?",
+    "expected_answer": "Residential Lease Agreement",
+    "expected_source": "Lease_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 16,
+    "question": "What benefits related to leave are provided to the employee?",
+    "expected_answer": "18 paid annual leave days and 10 sick leave days each year",
+    "expected_source": "Employment_Agreement.pdf",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": 17,
+    "question": "Does the employee receive medical insurance coverage?",
+    "expected_behavior": "unknown"
+  },
+  {
+    "id": 18,
+    "question": "What is the employee's performance bonus?",
+    "expected_behavior": "unknown"
+  },
+  {
+    "id": 19,
+    "question": "Does the residential lease agreement mention a pet policy?",
+    "expected_behavior": "unknown"
+  },
+  {
+    "id": 20,
+    "question": "What is the employee's work-from-home allowance?",
+    "expected_behavior": "unknown"
+  }
+]

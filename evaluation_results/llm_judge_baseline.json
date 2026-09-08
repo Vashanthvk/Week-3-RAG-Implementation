@@ -1,0 +1,676 @@
+{
+  "evaluation": "week6_llm_as_judge_baseline",
+  "model": "llama3.2",
+  "benchmark_file": "D:\\Practice\\RAG\\legal-contract-rag\\evaluation_results\\week6_benchmark.json",
+  "summary": {
+    "total_cases": 20,
+    "valid_judgments": 20,
+    "invalid_judgments": 0,
+    "average_correctness": 8.5,
+    "average_grounding": 7.75,
+    "average_source_attribution": 7.8,
+    "average_overall": 7.85
+  },
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the annual salary of the employee?",
+      "expected_answer": "USD 72,000",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the annual salary of the employee is USD 72,000.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": true,
+      "failure_type": "source_attribution_error",
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 9,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correct answer, but source attribution is not perfect due to the presence of unrelated sources."
+    },
+    {
+      "id": 2,
+      "question": "What is the notice period for an employee?",
+      "expected_answer": "30 calendar days' written notice",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the notice period for an employee is 30 calendar days. The employer may also waive part or all of this notice period.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": false,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": false,
+      "failure_type": "answer_and_source_error",
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correctly stated the notice period as 30 calendar days, but incorrectly mentioned that the employer may waive part or all of this notice period."
+    },
+    {
+      "id": 3,
+      "question": "How many paid annual leave days does the employee receive each year?",
+      "expected_answer": "18 paid annual leave days",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page: 1, the employee receives 18 paid annual leave days each year.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": true,
+      "failure_type": "source_attribution_error",
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correct answer, but source attribution is not perfect due to the presence of unrelated contracts"
+    },
+    {
+      "id": 4,
+      "question": "How many sick leave days does the employee receive each year?",
+      "expected_answer": "10 sick leave days",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page: 1, employees are entitled to 10 sick leave days each year.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": true,
+      "failure_type": "source_attribution_error",
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correctly stated the number of sick leave days, but source attribution could be improved"
+    },
+    {
+      "id": 5,
+      "question": "How long must the employee maintain confidentiality after leaving?",
+      "expected_answer": "2 years after leaving",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 3 (Non-Disclosure Agreement), the employee must not disclose confidential information during employment or for 2 years after leaving.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": true,
+      "failure_type": "source_attribution_error",
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 6,
+      "source_attribution": 9,
+      "overall": 7,
+      "judge_reason": "The system correctly cited the correct source, but incorrectly stated that the employee must not disclose confidential information during employment. The expected answer states that the employee must maintain confidentiality for 2 years after leaving."
+    },
+    {
+      "id": 6,
+      "question": "What are the reasons the employment agreement may be terminated?",
+      "expected_answer": "Misconduct, breach of contract, or mutual agreement",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to Source 1 (Employment_Agreement.pdf, Page 1), the employment agreement may be terminated for the following reasons:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": true,
+      "failure_type": "source_attribution_error",
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "The system's answer is factually consistent with the expected answer, and it correctly attributes the source to the Employment_Agreement.pdf. However, the Non_Disclosure_Agreement.pdf and Lease_Agreement.pdf sources are not relevant to the question."
+    },
+    {
+      "id": 7,
+      "question": "What is the monthly rent in the lease agreement?",
+      "expected_answer": "USD 1,500",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "The monthly rent in the Lease Agreement is USD 1,500, payable before the 5th of each month. (Source: Lease_Agreement.pdf, Page 1)",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correct answer, but source attribution is not fully accurate as Employment_Agreement.pdf and Non_Disclosure_Agreement.pdf are not relevant to the question"
+    },
+    {
+      "id": 8,
+      "question": "When must the monthly rent be paid?",
+      "expected_answer": "Before the 5th of each month",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Lease_Agreement.pdf), Page 1, the monthly rent must be paid before the 5th of each month.",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correctly stated the answer is factually consistent with the expected answer, but source attribution could be improved"
+    },
+    {
+      "id": 9,
+      "question": "What is the security deposit for the property?",
+      "expected_answer": "USD 3,000",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Lease_Agreement.pdf), Page 1, the Security Deposit for the property is USD 3,000, which is refundable subject to inspection.",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Answer is factually consistent with the expected answer, but source attribution could be improved"
+    },
+    {
+      "id": 10,
+      "question": "What is the lease period?",
+      "expected_answer": "1 January 2026 to 31 December 2026",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "The lease period is from 1 January 2026 to 31 December 2026. (SOURCE 1: Lease_Agreement.pdf, Page 1)",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correct answer, but source attribution is not explicitly stated as 'Lease_Agreement.pdf'"
+    },
+    {
+      "id": 11,
+      "question": "Who is responsible for structural repairs in the lease agreement?",
+      "expected_answer": "The landlord",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Lease_Agreement.pdf), Page 1, the Landlord is responsible for structural repairs.",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "The answer is factually consistent with the expected answer, but source attribution could be improved by only referencing Lease_Agreement.pdf"
+    },
+    {
+      "id": 12,
+      "question": "What is the lease termination notice period?",
+      "expected_answer": "60 days' written notice",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "SOURCE 1 (Lease_Agreement.pdf)\n\nAccording to the Residential Lease Agreement, either party may terminate the lease with 60 days' written notice.",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 9,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correctly states the lease termination notice period, but source attribution is not explicitly correct as it cites page 1 of multiple documents"
+    },
+    {
+      "id": 13,
+      "question": "Which contract has a 30-day notice period?",
+      "expected_answer": "Employment Agreement",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "SOURCE 1 (Employment_Agreement.pdf)",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": false,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": false,
+      "failure_type": "answer_and_source_error",
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 9,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correctly identified the Employment Agreement as having a 30-day notice period, but did not provide sufficient grounding in the provided contract."
+    },
+    {
+      "id": 14,
+      "question": "Which contract has a 60-day termination notice period?",
+      "expected_answer": "Residential Lease Agreement",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "SOURCE 3 (Lease_Agreement.pdf)\n\nThe Lease_Agreement.pdf has a 60-day termination notice period.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": false,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": false,
+      "failure_type": "answer_or_grounding_error",
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 9,
+      "source_attribution": 10,
+      "overall": 9,
+      "judge_reason": "Correctly identified the source with a 60-day termination notice period, but did not directly state which contract has this feature"
+    },
+    {
+      "id": 15,
+      "question": "Which agreement contains a security deposit?",
+      "expected_answer": "Residential Lease Agreement",
+      "expected_source": "Lease_Agreement.pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "SOURCE 1 (Lease_Agreement.pdf)\n\nThe Residential Lease Agreement contains a security deposit.",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 9,
+      "source_attribution": 10,
+      "overall": 9,
+      "judge_reason": "Correctly identified the Residential Lease Agreement as containing a security deposit, but failed to provide evidence from the correct page of the document."
+    },
+    {
+      "id": 16,
+      "question": "What benefits related to leave are provided to the employee?",
+      "expected_answer": "18 paid annual leave days and 10 sick leave days each year",
+      "expected_source": "Employment_Agreement(2).pdf",
+      "expected_behavior": "answer",
+      "actual_answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the employee is entitled to:\n\n* 18 paid annual leave days\n* 10 sick leave days each year.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": false,
+      "deterministic_behavior_pass": true,
+      "failure_type": "source_attribution_error",
+      "judge_status": "valid",
+      "correctness": 9,
+      "grounding": 8,
+      "source_attribution": 7,
+      "overall": 8,
+      "judge_reason": "Correctly stated the benefits related to leave, but source attribution could be improved"
+    },
+    {
+      "id": 17,
+      "question": "Does the employee receive medical insurance coverage?",
+      "expected_answer": null,
+      "expected_source": null,
+      "expected_behavior": "unknown",
+      "actual_answer": "I don't know based on the provided contracts.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 6,
+      "source_attribution": 9,
+      "overall": 7,
+      "judge_reason": "Answer is factually consistent with expected answer, but lacks grounding in provided contracts."
+    },
+    {
+      "id": 18,
+      "question": "What is the employee's performance bonus?",
+      "expected_answer": null,
+      "expected_source": null,
+      "expected_behavior": "unknown",
+      "actual_answer": "I don't know based on the provided contracts.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 6,
+      "source_attribution": 9,
+      "overall": 7,
+      "judge_reason": "Answer is factually consistent with expected answer, but lacks grounding in provided contracts."
+    },
+    {
+      "id": 19,
+      "question": "Does the residential lease agreement mention a pet policy?",
+      "expected_answer": null,
+      "expected_source": null,
+      "expected_behavior": "unknown",
+      "actual_answer": "I don't know based on the provided contracts.",
+      "actual_sources": [
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 6,
+      "source_attribution": 9,
+      "overall": 7,
+      "judge_reason": "Answer is factually consistent with expected refusal, but lacks grounding in the provided contract."
+    },
+    {
+      "id": 20,
+      "question": "What is the employee's work-from-home allowance?",
+      "expected_answer": null,
+      "expected_source": null,
+      "expected_behavior": "unknown",
+      "actual_answer": "I don't know based on the provided contracts.",
+      "actual_sources": [
+        {
+          "source": "Employment_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Lease_Agreement.pdf",
+          "page": "1"
+        },
+        {
+          "source": "Non_Disclosure_Agreement.pdf",
+          "page": "1"
+        }
+      ],
+      "deterministic_pass": null,
+      "deterministic_answer_pass": true,
+      "deterministic_source_pass": true,
+      "deterministic_behavior_pass": true,
+      "failure_type": null,
+      "judge_status": "valid",
+      "correctness": 8,
+      "grounding": 6,
+      "source_attribution": 9,
+      "overall": 7,
+      "judge_reason": "Answer is factually consistent with expected refusal, but lacks grounding in provided contracts"
+    }
+  ]
+}

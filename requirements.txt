@@ -11,3 +11,5 @@ pypdf==6.0.0
 sentence-transformers==5.1.0
 streamlit==1.48.1
 ollama==0.5.3
+
+rank_bm25
