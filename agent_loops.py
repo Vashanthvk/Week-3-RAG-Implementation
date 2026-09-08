@@ -926,8 +926,8 @@ Actual project interfaces:
 - retrieval result: {"results": [{"document": {...}, ...}], ...}
 - rag.build_context(results) in the local runtime expects objects exposing
   .metadata and .page_content
-- rag.create_llm() creates the LLM
-- rag.generate_answer(llm, context, question) generates the answer
+- rag.llm provides the initialized LLM instance
+- rag.generate_answer(question, context) generates the answer
 
 The agent exposes:
     PLAN -> ACT -> OBSERVE -> PLAN/ACT -> OBSERVE
@@ -949,7 +949,7 @@ from hybrid_retrieval import (
 
 from rag import (
     build_context,
-    create_llm,
+    llm as _rag_llm,
     generate_answer as _rag_generate_answer,
 )
 
@@ -1001,11 +1001,13 @@ def generate_answer(
     This wrapper keeps both interfaces compatible.
     """
 
-    llm = create_llm()
+    # The current Week 6 rag.py already owns the initialized module-level
+    # OllamaLLM instance as `rag.llm` and exposes generate_answer(question,
+    # context). Reuse that interface instead of requiring a nonexistent
+    # rag.create_llm() factory.
     return _rag_generate_answer(
-        llm,
-        context,
         question,
+        context,
     )
 
 

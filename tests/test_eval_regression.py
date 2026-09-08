@@ -1,58 +1,3 @@
-# import json
-# import unittest
-# from pathlib import Path
-
-# from rag import answer_question
-
-
-# QUESTIONS_PATH = Path(__file__).resolve().parents[1] / "evaluation_questions.json"
-
-
-# class EvaluationRegressionTests(unittest.TestCase):
-
-#     def test_all_20_questions_are_loaded(self):
-#         with QUESTIONS_PATH.open("r", encoding="utf-8") as file:
-#             questions = json.load(file)
-#         self.assertEqual(len(questions), 20)
-
-#     def test_valid_questions_return_source_schema_and_non_empty_answer(self):
-#         with QUESTIONS_PATH.open("r", encoding="utf-8") as file:
-#             questions = json.load(file)
-
-#         for item in questions[:16]:
-#             answer, sources = answer_question(item["question"])
-#             self.assertIsInstance(answer, str)
-#             self.assertTrue(answer.strip())
-#             self.assertIsInstance(sources, list)
-#             self.assertTrue(sources)
-#             self.assertIn("source", sources[0])
-#             self.assertIn("page", sources[0])
-
-#     def test_unsupported_questions_are_refused_cleanly(self):
-#         with QUESTIONS_PATH.open("r", encoding="utf-8") as file:
-#             questions = json.load(file)
-
-#         for item in questions[16:]:
-#             question = item["question"]
-#             answer, _ = answer_question(question)
-#             self.assertTrue(
-#                 "I don't know" in answer or "not mentioned" in answer.lower() or "no mention" in answer.lower()
-#             )
-
-
-# if __name__ == "__main__":
-#     unittest.main()
-
-
-
-
-
-
-
-
-# Updated
-
-
 import json
 import unittest
 from pathlib import Path
@@ -143,7 +88,8 @@ class EvaluationRegressionTests(unittest.TestCase):
             if item["expected_behavior"] == "answer"
         ]
 
-        self.assertEqual(len(answerable), 19)
+        # Week 6 benchmark contains 16 supported cases and 4 unsupported cases.
+        self.assertEqual(len(answerable), 16)
 
         for item in answerable:
             with self.subTest(question_id=item["id"]):
@@ -167,7 +113,8 @@ class EvaluationRegressionTests(unittest.TestCase):
             if item["expected_behavior"] == "unknown"
         ]
 
-        self.assertEqual(len(unknown_cases), 1)
+        # Week 6 explicitly tests four unsupported questions.
+        self.assertEqual(len(unknown_cases), 4)
 
         for item in unknown_cases:
             with self.subTest(question_id=item["id"]):
