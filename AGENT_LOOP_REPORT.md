@@ -18,6 +18,20 @@
     "average_steps": 2.0,
     "estimated_cost": 0.04
   },
+  "trajectory_baseline": {
+    "question_count": 20,
+    "outcome_accuracy": 1.0,
+    "trajectory_accuracy": 1.0,
+    "tool_choice_accuracy": 1.0,
+    "outcome_trajectory_gap": 0.0,
+    "mean_tool_calls": 2,
+    "mean_cost": 0.002,
+    "p99_cost": 0.002,
+    "mean_latency_seconds": 4.0116,
+    "p99_latency_seconds": 7.7541,
+    "invalid_trajectory_count": 0,
+    "invalid_trajectories": []
+  },
   "safety": {
     "max_steps": 6,
     "max_seconds": 30.0,
@@ -45,20 +59,19 @@
     "rows": [
       {
         "id": 1,
-        "question": "What is the annual salary of the employee?",
         "agent": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the annual salary of the employee is USD 72,000.",
+          "answer": "The annual salary of the employee is USD 72,000.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -99,29 +112,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.9352,
+          "elapsed_seconds": 5.5173,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the annual salary of the employee is USD 72,000.",
+          "answer": "The annual salary of the employee is USD 72,000.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.0345,
+          "elapsed_seconds": 0.8344,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -131,20 +144,19 @@
       },
       {
         "id": 2,
-        "question": "What is the notice period for an employee?",
         "agent": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the notice period for an employee is:\n\n\"Employees must provide 30 calendar days' written notice before resignation.\"\n\nThis notice period can be waived by the employer \"part or all of the notice period\".",
+          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the notice period for an employee is 30 calendar days.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -185,29 +197,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.8547,
+          "elapsed_seconds": 2.0837,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page 1, the notice period for an employee is:\n\n\"Employees must provide 30 calendar days' written notice before resignation.\"\n\nThis notice period can be waived by the employer \"part or all of the notice period\".",
+          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the notice period for an employee is 30 calendar days.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.7547,
+          "elapsed_seconds": 1.7931,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -217,20 +229,19 @@
       },
       {
         "id": 3,
-        "question": "How many paid annual leave days does the employee receive each year?",
         "agent": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page 1, the employee receives 18 paid annual leave days each year.",
+          "answer": "According to the Employment_Agreement.pdf, the employee receives 18 paid annual leave days each year.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -271,29 +282,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.2437,
+          "elapsed_seconds": 4.3553,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page 1, the employee receives 18 paid annual leave days each year.",
+          "answer": "According to the Employment_Agreement.pdf, the employee receives 18 paid annual leave days each year.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.971,
+          "elapsed_seconds": 1.3325,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -303,20 +314,19 @@
       },
       {
         "id": 4,
-        "question": "How many sick leave days does the employee receive each year?",
         "agent": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page 1, employees are entitled to 10 sick leave days each year.",
+          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the employee receives 10 sick leave days each year.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -357,29 +367,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.1953,
+          "elapsed_seconds": 1.9887,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf), Page 1, the employee is entitled to 10 sick leave days each year.",
+          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the employee receives 10 sick leave days each year.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.0495,
+          "elapsed_seconds": 1.7315,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -389,20 +399,19 @@
       },
       {
         "id": 5,
-        "question": "How long must the employee maintain confidentiality after leaving?",
         "agent": {
-          "answer": "Based on Source 3 (Non-Disclosure Agreement), the employee must maintain confidentiality for 2 years after leaving.",
+          "answer": "According to SOURCE 3 (Non-Disclosure_Agreement.pdf, Page 1), the employee must maintain confidentiality for 2 years after leaving.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -443,29 +452,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.9914,
+          "elapsed_seconds": 4.9915,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "Based on Source 3 (Non-Disclosure Agreement), the employee must maintain confidentiality for 2 years after leaving.",
+          "answer": "According to SOURCE 3 (Non-Disclosure Agreement), the employee must maintain confidentiality for 2 years after leaving.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.8422,
+          "elapsed_seconds": 1.504,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -475,20 +484,19 @@
       },
       {
         "id": 6,
-        "question": "What are the reasons the employment agreement may be terminated?",
         "agent": {
-          "answer": "Based on SOURCE 1 (Employment_Agreement.pdf, Page: 1), the employment agreement may be terminated for:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement.\n\nThese reasons are explicitly stated in the contract context.",
+          "answer": "According to SOURCE 1 (Document: Employment_Agreement.pdf, Page: 1), the employment agreement may be terminated for:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -529,29 +537,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.3948,
+          "elapsed_seconds": 7.0486,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "Based on SOURCE 1 (Employment_Agreement.pdf, Page: 1), the employment agreement may be terminated for:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement.\n\nThese reasons are explicitly stated in the contract context.",
+          "answer": "According to the Employment_Agreement.pdf (SOURCE 1), the employment agreement may be terminated for the following reasons:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.342,
+          "elapsed_seconds": 2.4539,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -561,20 +569,19 @@
       },
       {
         "id": 7,
-        "question": "What is the monthly rent in the lease agreement?",
         "agent": {
-          "answer": "The monthly rent in the Lease Agreement is USD 1,500, payable before the 5th of each month.",
+          "answer": "The monthly rent in the lease agreement is USD 1,500, payable before the 5th of each month.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -615,29 +622,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.9322,
+          "elapsed_seconds": 5.8205,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "The monthly rent in the Lease Agreement is USD 1,500, payable before the 5th of each month.",
+          "answer": "The monthly rent in the lease agreement is USD 1,500, payable before the 5th of each month.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.6624,
+          "elapsed_seconds": 1.5458,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -647,20 +654,19 @@
       },
       {
         "id": 8,
-        "question": "When must the monthly rent be paid?",
         "agent": {
-          "answer": "According to SOURCE 1 (Residential Lease Agreement), the monthly rent must be paid before the 5th of each month.",
+          "answer": "According to SOURCE 1 (Lease_Agreement.pdf, Page 1), the monthly rent must be paid before the 5th of each month.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -701,29 +707,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.4498,
+          "elapsed_seconds": 2.2172,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Residential Lease Agreement), the monthly rent must be paid before the 5th of each month.",
+          "answer": "According to SOURCE 1 (Lease_Agreement.pdf, Page 1), the monthly rent must be paid before the 5th of each month.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.8695,
+          "elapsed_seconds": 1.9871,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -733,20 +739,19 @@
       },
       {
         "id": 9,
-        "question": "What is the security deposit for the property?",
         "agent": {
-          "answer": "According to SOURCE 1 (Residential Lease Agreement), the Security Deposit is USD 3,000, which is refundable subject to inspection.",
+          "answer": "SOURCE 1\n\nDocument: Lease_Agreement.pdf\n\nPage: 1\n\nContent:\nSecurity Deposit\nUSD 3,000 refundable subject to inspection.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -787,29 +792,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.1913,
+          "elapsed_seconds": 5.1243,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Residential Lease Agreement), the Security Deposit is USD 3,000, which is refundable subject to inspection.",
+          "answer": "SOURCE 1\n\nDocument: Lease_Agreement.pdf\n\nPage: 1\n\nContent:\nSecurity Deposit\nUSD 3,000 refundable subject to inspection.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.96,
+          "elapsed_seconds": 1.9965,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -819,20 +824,19 @@
       },
       {
         "id": 10,
-        "question": "What is the lease period?",
         "agent": {
-          "answer": "The lease period is from 1 January 2026 to 31 December 2026, as stated in SOURCE 1: Residential Lease Agreement.pdf.",
+          "answer": "SOURCE 1\n\nDocument: Lease_Agreement.pdf\n\nPage: 1\n\nContent:\nLease Period\n1 January 2026 to 31 December 2026.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -873,29 +877,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.4236,
+          "elapsed_seconds": 5.304,
           "stop_reason": "answer_ready"
         },
         "fixed": {
           "answer": "The lease period is from 1 January 2026 to 31 December 2026.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.3751,
+          "elapsed_seconds": 1.1758,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -905,20 +909,19 @@
       },
       {
         "id": 11,
-        "question": "Who is responsible for structural repairs in the lease agreement?",
         "agent": {
-          "answer": "According to SOURCE 1 (Lease_Agreement.pdf), Page 1:\n\n\"Landlord is responsible for structural repairs.\"",
+          "answer": "According to SOURCE 1 (Lease_Agreement.pdf, Page 1), the Landlord is responsible for structural repairs.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -959,29 +962,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.0521,
+          "elapsed_seconds": 4.7199,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Lease_Agreement.pdf), Page 1:\n\n\"Landlord is responsible for structural repairs.\"",
+          "answer": "According to SOURCE 1 (Lease_Agreement.pdf, Page 1), the Landlord is responsible for structural repairs.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.9148,
+          "elapsed_seconds": 1.5876,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -991,20 +994,19 @@
       },
       {
         "id": 12,
-        "question": "What is the lease termination notice period?",
         "agent": {
-          "answer": "According to SOURCE 1 (Residential Lease Agreement), the lease termination notice period is 60 days.",
+          "answer": "SOURCE 1\n\nDocument: Lease_Agreement.pdf\n\nPage: 1\n\nContent:\nTermination\nEither party may terminate the lease with 60 days' written notice.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1045,29 +1047,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.3543,
+          "elapsed_seconds": 5.3521,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Residential Lease Agreement), the lease termination notice period is 60 days.",
+          "answer": "SOURCE 1\n\nDocument: Lease_Agreement.pdf\n\nPage: 1\n\nContent:\nTermination\nEither party may terminate the lease with 60 days' written notice.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.4817,
+          "elapsed_seconds": 2.3405,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1077,20 +1079,19 @@
       },
       {
         "id": 13,
-        "question": "Which contract has a 30-day notice period?",
         "agent": {
-          "answer": "The Employment Agreement (SOURCE 1) has a 30 calendar days' written notice period before resignation.",
+          "answer": "The notice periods stated in the Employment Agreement and the Residential Lease Agreement are as follows:\n\n- Employment Agreement: 30 calendar days (waivable by the employer) for resignation, and no specific notice period is mentioned for termination due to misconduct, breach of contract, or mutual agreement.\n- Residential Lease Agreement: 60 days for termination of the lease.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1131,29 +1132,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.7579,
+          "elapsed_seconds": 7.7189,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "The Employment Agreement (SOURCE 1) has a 30 calendar days' written notice period before resignation.",
+          "answer": "The notice periods stated in the Employment Agreement and the Residential Lease Agreement are as follows:\n\n- Employment Agreement: 30 calendar days (waivable by the employer) for resignation, and no specific notice period is mentioned for termination due to misconduct, breach of contract, or mutual agreement.\n- Residential Lease Agreement: 60 days for termination of the lease.\n\nThe notice periods belong to the following documents:\n\n- Employment Agreement: 30 calendar days for resignation.\n- Residential Lease Agreement: 60 days for termination of the lease.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.5051,
+          "elapsed_seconds": 6.2124,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1163,20 +1164,19 @@
       },
       {
         "id": 14,
-        "question": "Which contract has a 60-day termination notice period?",
         "agent": {
-          "answer": "The Lease Agreement (SOURCE 3) has a 60-day termination notice period.",
+          "answer": "The Employment Agreement (SOURCE 3) states that employees must provide 30 calendar days' written notice before resignation. \n\nIn contrast, the Residential Lease Agreement (SOURCE 2) requires 60 days' written notice for termination of the lease.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1217,29 +1217,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.9858,
+          "elapsed_seconds": 7.0492,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "The Lease Agreement (SOURCE 3) has a 60-day termination notice period.",
+          "answer": "The Employment Agreement (SOURCE 3) states that employees must provide 30 calendar days' written notice before resignation. \n\nIn contrast, the Residential Lease Agreement (SOURCE 2) requires 60 days' written notice for either party to terminate the lease.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 1.2636,
+          "elapsed_seconds": 3.0453,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1249,20 +1249,19 @@
       },
       {
         "id": 15,
-        "question": "Which agreement contains a security deposit?",
         "agent": {
-          "answer": "The answer can be found in SOURCE 1 (Lease_Agreement.pdf). According to the document, the Security Deposit is USD 3,000, which is refundable subject to inspection.",
+          "answer": "The contract that contains a security deposit is SOURCE 2: Lease_Agreement.pdf.\n\nThe notice period required to terminate the lease is 60 days, as stated in SOURCE 2: Lease_Agreement.pdf.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1303,29 +1302,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.7968,
+          "elapsed_seconds": 3.0403,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "The Residential Lease Agreement (SOURCE 1) contains a security deposit. According to the document, \"Security Deposit: USD 3,000 refundable subject to inspection.\"",
+          "answer": "The contract that contains a security deposit is SOURCE 2: Lease_Agreement.pdf.\n\nThe notice period required to terminate the lease is 60 days, as stated in SOURCE 2: Lease_Agreement.pdf.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.2538,
+          "elapsed_seconds": 2.6682,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1335,20 +1334,19 @@
       },
       {
         "id": 16,
-        "question": "What benefits related to leave are provided to the employee?",
         "agent": {
-          "answer": "Based on SOURCE 1 (Employment_Agreement.pdf, Page 1), the employee is entitled to:\n\n* 18 paid annual leave days each year\n* 10 sick leave days each year",
+          "answer": "SOURCE 1 (Employment_Agreement.pdf)\n\nNotice Period: 30 calendar days (applicable to Employment Agreements)\n\nSOURCE 2 (Lease_Agreement.pdf)\n\nNotice Period: 60 days (applicable to Lease Agreements)\n\nSOURCE 3 (Employment_Agreement.pdf)\n\nNotice Period: Not specified (only mentions termination for misconduct, breach of contract, or mutual agreement, without providing a specific notice period)\n\nSOURCE 4 (Non_Disclosure_Agreement.pdf)\n\nNotice Period: Not specified (only mentions breach and legal remedies, without providing a specific notice period)",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1367,8 +1365,8 @@
             {
               "step": 1,
               "phase": "OBSERVE",
-              "message": "Retrieved evidence with best score 0.40.",
-              "attempt": 2
+              "message": "Retrieved evidence with best score 1.00.",
+              "attempt": 1
             },
             {
               "step": 1,
@@ -1383,35 +1381,35 @@
             }
           ],
           "memory": [
-            "retrieval attempt=2 best_score=0.40",
+            "retrieval attempt=1 best_score=1.00",
             "drafted answer from 4 chunks"
           ],
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 5.4456,
+          "elapsed_seconds": 7.7623,
           "stop_reason": "answer_ready"
         },
         "fixed": {
-          "answer": "According to SOURCE 1 (Employment_Agreement.pdf, Page 1), the employee is entitled to:\n\n* 18 paid annual leave days each year\n* 10 sick leave days each year\n\nThese benefits are part of the Leave Policy outlined in the Employment Agreement.",
+          "answer": "SOURCE 1 (Employment_Agreement.pdf)\n\nNotice Period: 30 calendar days (applicable to Employment Agreements)\n\nSOURCE 2 (Lease_Agreement.pdf)\n\nNotice Period: 60 days (applicable to Lease Agreements)\n\nSOURCE 3 (Employment_Agreement.pdf)\n\nNotice Period: Not specified (only mentions termination for misconduct, breach of contract, or mutual agreement, without providing a specific notice period)\n\nSOURCE 4 (Non_Disclosure_Agreement.pdf)\n\nNotice Period: Not specified (only mentions breach and legal remedies, without providing a specific notice period)",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 3.8711,
+          "elapsed_seconds": 7.2996,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1421,20 +1419,19 @@
       },
       {
         "id": 17,
-        "question": "Does the employee receive medical insurance coverage?",
         "agent": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1459,7 +1456,8 @@
             {
               "step": 1,
               "phase": "PLAN",
-              "message": "Evidence is weak; retry retrieval once."
+              "message": "Evidence is weak; retry retrieval.",
+              "retry": 1
             },
             {
               "step": 2,
@@ -1476,41 +1474,40 @@
             {
               "step": 2,
               "phase": "OBSERVE",
-              "message": "Evidence remains insufficient; refusing unsupported answer."
+              "message": "Evidence remained weak after the bounded retry; refusing."
             }
           ],
           "memory": [
             "retrieval attempt=2 best_score=0.20",
-            "weak evidence; one bounded retrieval retry allowed",
-            "retrieval attempt=2 best_score=0.20",
-            "evidence remained weak after bounded retry; refusing unsupported answer"
+            "weak evidence; retry retrieval before answering",
+            "retrieval attempt=2 best_score=0.20"
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.0818,
+          "elapsed_seconds": 0.0352,
           "stop_reason": "answer_ready"
         },
         "fixed": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.021,
+          "elapsed_seconds": 0.0178,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1520,20 +1517,19 @@
       },
       {
         "id": 18,
-        "question": "What is the employee's performance bonus?",
         "agent": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1558,7 +1554,8 @@
             {
               "step": 1,
               "phase": "PLAN",
-              "message": "Evidence is weak; retry retrieval once."
+              "message": "Evidence is weak; retry retrieval.",
+              "retry": 1
             },
             {
               "step": 2,
@@ -1575,41 +1572,40 @@
             {
               "step": 2,
               "phase": "OBSERVE",
-              "message": "Evidence remains insufficient; refusing unsupported answer."
+              "message": "Evidence remained weak after the bounded retry; refusing."
             }
           ],
           "memory": [
             "retrieval attempt=2 best_score=0.00",
-            "weak evidence; one bounded retrieval retry allowed",
-            "retrieval attempt=2 best_score=0.00",
-            "evidence remained weak after bounded retry; refusing unsupported answer"
+            "weak evidence; retry retrieval before answering",
+            "retrieval attempt=2 best_score=0.00"
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.0429,
+          "elapsed_seconds": 0.0467,
           "stop_reason": "answer_ready"
         },
         "fixed": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.0201,
+          "elapsed_seconds": 0.0191,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1619,20 +1615,19 @@
       },
       {
         "id": 19,
-        "question": "Does the residential lease agreement mention a pet policy?",
         "agent": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1673,29 +1668,29 @@
           "steps": 1,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 2.799,
+          "elapsed_seconds": 0.02,
           "stop_reason": "answer_ready"
         },
         "fixed": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.8634,
+          "elapsed_seconds": 0.0184,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,
@@ -1705,20 +1700,19 @@
       },
       {
         "id": 20,
-        "question": "What is the employee's work-from-home allowance?",
         "agent": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
@@ -1743,7 +1737,8 @@
             {
               "step": 1,
               "phase": "PLAN",
-              "message": "Evidence is weak; retry retrieval once."
+              "message": "Evidence is weak; retry retrieval.",
+              "retry": 1
             },
             {
               "step": 2,
@@ -1760,41 +1755,40 @@
             {
               "step": 2,
               "phase": "OBSERVE",
-              "message": "Evidence remains insufficient; refusing unsupported answer."
+              "message": "Evidence remained weak after the bounded retry; refusing."
             }
           ],
           "memory": [
             "retrieval attempt=2 best_score=0.00",
-            "weak evidence; one bounded retrieval retry allowed",
-            "retrieval attempt=2 best_score=0.00",
-            "evidence remained weak after bounded retry; refusing unsupported answer"
+            "weak evidence; retry retrieval before answering",
+            "retrieval attempt=2 best_score=0.00"
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.0339,
+          "elapsed_seconds": 0.0369,
           "stop_reason": "answer_ready"
         },
         "fixed": {
           "answer": "I don't know based on the provided contracts.",
           "sources": [
             {
-              "source": "Employment_Agreement.pdf",
+              "source": "contracts\\Employment_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Lease_Agreement.pdf",
+              "source": "contracts\\Lease_Agreement.pdf",
               "page": "1"
             },
             {
-              "source": "Non_Disclosure_Agreement.pdf",
+              "source": "contracts\\Non_Disclosure_Agreement.pdf",
               "page": "1"
             }
           ],
           "steps": 2,
           "tool_calls": 2,
           "estimated_cost": 0.002,
-          "elapsed_seconds": 0.0164,
+          "elapsed_seconds": 0.0156,
           "stop_reason": "answer_ready"
         },
         "agent_answered": true,

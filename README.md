@@ -84,3 +84,9 @@ week 4 final architecture
                          │
                          ▼
                       Sources
+
+
+
+week 8 :
+
+ollama serve - to run ollama 

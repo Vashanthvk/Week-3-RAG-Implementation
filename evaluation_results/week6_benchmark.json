@@ -133,7 +133,7 @@
     "id": 6,
     "question": "What are the reasons the employment agreement may be terminated?",
     "failure_type": null,
-    "answer": "According to Source 1 (Employment_Agreement.pdf, Page 1), the employment agreement may be terminated for the following reasons:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement",
+    "answer": "According to Source 1 (Employment_Agreement.pdf, Page 1), the employment agreement may be terminated for:\n\n1. Misconduct\n2. Breach of contract\n3. Mutual agreement.",
     "expected": "Misconduct, breach of contract, or mutual agreement",
     "sources": [
       {
@@ -159,7 +159,7 @@
     "id": 7,
     "question": "What is the monthly rent in the lease agreement?",
     "failure_type": null,
-    "answer": "According to SOURCE 1 (Lease_Agreement.pdf), Page 1, the monthly rent is USD 1,500 payable before the 5th of each month.",
+    "answer": "The monthly rent in the Lease Agreement is USD 1,500.",
     "expected": "USD 1,500",
     "sources": [
       {

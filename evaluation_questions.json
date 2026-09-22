@@ -85,30 +85,30 @@
   },
   {
     "id": 13,
-    "question": "Which contract has a 30-day notice period?",
-    "expected_answer": "Employment Agreement",
-    "expected_source": "Employment_Agreement.pdf",
+    "question": "What are the notice periods stated in the Employment Agreement and the Residential Lease Agreement, and which document does each notice period belong to?",
+    "expected_answer": "The Employment Agreement requires 30 calendar days' written notice, while the Residential Lease Agreement requires 60 days' written notice.",
+    "expected_source": "Employment_Agreement.pdf, Lease_Agreement.pdf",
     "expected_behavior": "answer"
   },
   {
     "id": 14,
-    "question": "Which contract has a 60-day termination notice period?",
-    "expected_answer": "Residential Lease Agreement",
-    "expected_source": "Lease_Agreement.pdf",
+    "question": "Compare the leave-related benefits in the Employment Agreement with the termination notice requirement in the Residential Lease Agreement.",
+    "expected_answer": "The Employment Agreement provides 18 paid annual leave days and 10 sick leave days each year, while the Residential Lease Agreement requires 60 days' written notice for termination.",
+    "expected_source": "Employment_Agreement.pdf, Lease_Agreement.pdf",
     "expected_behavior": "answer"
   },
   {
     "id": 15,
-    "question": "Which agreement contains a security deposit?",
-    "expected_answer": "Residential Lease Agreement",
+    "question": "Which contract contains a security deposit, and what notice period is required to terminate that contract?",
+    "expected_answer": "The Residential Lease Agreement contains a USD 3,000 security deposit and requires 60 days' written notice for termination.",
     "expected_source": "Lease_Agreement.pdf",
     "expected_behavior": "answer"
   },
   {
     "id": 16,
-    "question": "What benefits related to leave are provided to the employee?",
-    "expected_answer": "18 paid annual leave days and 10 sick leave days each year",
-    "expected_source": "Employment_Agreement.pdf",
+    "question": "The contracts contain different notice periods. Identify both notice periods and explain what type of agreement each applies to.",
+    "expected_answer": "The Employment Agreement requires 30 calendar days' written notice for resignation, while the Residential Lease Agreement requires 60 days' written notice for termination.",
+    "expected_source": "Employment_Agreement.pdf, Lease_Agreement.pdf",
     "expected_behavior": "answer"
   },
   {
