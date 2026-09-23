@@ -1,0 +1,184 @@
+[
+  {
+    "id": "T01",
+    "question": "What is the employee's annual salary?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "annual salary"
+    ],
+    "expected_source_types": [
+      "employment"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T02",
+    "question": "What notice period must the employee provide before resignation, and can the employer waive any part of it?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "notice period",
+      "waive"
+    ],
+    "expected_source_types": [
+      "employment"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T03",
+    "question": "How many annual leave days and sick leave days does the employee receive each year?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "annual leave",
+      "sick leave"
+    ],
+    "expected_source_types": [
+      "employment"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T04",
+    "question": "For how long must the employee maintain confidentiality after leaving the company?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "confidentiality",
+      "leaving"
+    ],
+    "expected_source_types": [
+      "employment"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T05",
+    "question": "What is the monthly rent and when must it be paid?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "monthly rent",
+      "5th"
+    ],
+    "expected_source_types": [
+      "lease"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T06",
+    "question": "What is the security deposit and under what condition is it refundable?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "security deposit",
+      "inspection"
+    ],
+    "expected_source_types": [
+      "lease"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T07",
+    "question": "What is the lease period, and what event would allow the lease to end earlier?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "lease period",
+      "earlier terminated"
+    ],
+    "expected_source_types": [
+      "lease"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T08",
+    "question": "What notice period is required to terminate the lease, and does the agreement state who may give that notice?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "terminate",
+      "notice",
+      "either party"
+    ],
+    "expected_source_types": [
+      "lease"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T09",
+    "question": "Which contract has a 30-day notice requirement, and what event triggers that notice?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "30",
+      "notice",
+      "resignation"
+    ],
+    "expected_source_types": [
+      "employment"
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": "T10",
+    "question": "Which contract contains the confidentiality obligation, what information does it restrict, and how long does the obligation continue after employment ends?",
+    "expected_paths": [
+      [
+        "retrieve_contract_evidence",
+        "draft_grounded_answer"
+      ]
+    ],
+    "required_terms": [
+      "confidentiality",
+      "2 years",
+      "leaving"
+    ],
+    "expected_source_types": [
+      "employment"
+    ],
+    "needed_steps": 2
+  }
+]

@@ -1211,7 +1211,7 @@ def run_agent(question: str, budget: LoopBudget | None = None) -> dict[str, Any]
             _record(state, "STOP", f"Budget reached: {reason}.")
             break
 
-        _record(state, "ACT", "Call retrieve_contract_evidence.", tool="retrieve_contract_evidence")
+        _record(state, "ACT", "Call retrieve_contract_evidence.", tool="retrieve_contract_evidence",argument=question)
         observation = retrieve_contract_evidence(question, state)
         _record(
             state,
