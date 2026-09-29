@@ -1,0 +1,40 @@
+{
+  "MSA-2021-0142": {
+    "title": "Master Services Agreement",
+    "maps_to_local_contract": "Master_Service_Agreement.pdf",
+    "parties": ["Orion Analytics Inc.", "Delta Retail Group LLC"],
+    "effective_date": "2025-04-01",
+    "current_clause_range": "1-11",
+    "amendments": [
+      {
+        "id": "Amendment 1",
+        "effective_date": "2025-07-01",
+        "summary": "Merged clause 12 (Force Majeure) into clause 9 (Termination). Clauses renumbered 1-11."
+      }
+    ]
+  },
+  "LSE-2026-0007": {
+    "title": "Residential Lease Agreement",
+    "maps_to_local_contract": "Lease_Agreement.pdf",
+    "parties": ["Landlord", "Tenant"],
+    "effective_date": "2026-01-01",
+    "current_clause_range": "1-6",
+    "amendments": []
+  },
+  "NDA-2025-0033": {
+    "title": "Non-Disclosure Agreement",
+    "maps_to_local_contract": "Non_Disclosure_Agreement.pdf",
+    "parties": ["Disclosing Party", "Receiving Party"],
+    "effective_date": "2025-01-15",
+    "current_clause_range": "1-5",
+    "amendments": []
+  },
+  "SLA-2025-0091": {
+    "title": "Software License Agreement",
+    "maps_to_local_contract": "Software_License_Agreement.pdf",
+    "parties": ["NovaCloud Systems Inc.", "Harborview Logistics Ltd."],
+    "effective_date": "2025-09-15",
+    "current_clause_range": "1-4",
+    "amendments": []
+  }
+}

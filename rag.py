@@ -1135,12 +1135,9 @@ def display_sources(results):
 # GENERATE ANSWER
 # ============================================================
 
-def generate_answer(
-    question,
-    context
-):
+def build_answer_prompt(question, context):
 
-    prompt = f"""
+    return f"""
 You are a legal contract question-answering assistant.
 
 Answer the user's question ONLY using the provided contract context.
@@ -1191,11 +1188,45 @@ USER QUESTION:
 FINAL ANSWER:
 """
 
+
+def generate_answer(
+    question,
+    context
+):
+
+    prompt = build_answer_prompt(question, context)
+
     response = llm.invoke(
         prompt
     )
 
     return response.strip()
+
+
+def generate_answer_with_usage(question, context):
+    """Same prompt/model as generate_answer, but returns real token counts.
+
+    Week 7 Task Set F requires the race to sum actual per-call tokens rather
+    than a flat per-call constant, which needs Ollama's raw response
+    (prompt_eval_count / eval_count) instead of the langchain wrapper that
+    discards that metadata.
+    """
+
+    import ollama
+
+    prompt = build_answer_prompt(question, context)
+
+    response = ollama.generate(
+        model=MODEL_NAME,
+        prompt=prompt,
+        options={"temperature": TEMPERATURE},
+    )
+
+    return {
+        "answer": (response.response or "").strip(),
+        "prompt_tokens": response.prompt_eval_count or 0,
+        "completion_tokens": response.eval_count or 0,
+    }
 
 
 # ============================================================

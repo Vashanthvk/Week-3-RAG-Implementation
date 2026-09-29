@@ -1,0 +1,3 @@
+system,pass_rate,p50_latency_s,total_tokens,cost_per_question
+agent,0.9,26.9498,62127,0.003106
+fixed_workflow,1.0,2.8433,4568,0.000228

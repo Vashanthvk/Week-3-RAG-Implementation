@@ -13,3 +13,10 @@ streamlit==1.48.1
 ollama==0.5.3
 
 rank_bm25
+
+# fixture generation only (scripts/generate_fixture_contracts.py), not needed at runtime
+fpdf2
+
+# Week 9 MCP servers (mcp_servers/) and client agent (mcp_agent.py)
+mcp
+fastmcp

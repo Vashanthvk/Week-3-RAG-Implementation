@@ -31,6 +31,7 @@ REQUIRED_SOURCE_KEYS = {"source", "page"}
 ALLOWED_TOOLS = {
     "retrieve_contract_evidence",
     "draft_grounded_answer",
+    "get_definitions",
 }
 
 

@@ -1,6 +1,7 @@
 import unittest
 
 from agent_loops import LoopBudget, run_agent
+from security_controls import ALLOWED_TOOLS
 
 
 class SecurityIntegrationTests(unittest.TestCase):
@@ -23,7 +24,8 @@ class SecurityIntegrationTests(unittest.TestCase):
         self.assertNotEqual(result["stop_reason"], "security_blocked")
 
     def test_tool_calls_remain_allowlisted(self):
-        # The real agent only calls its two allowlisted tools.
+        # The real agent only ever calls the three allowlisted tools
+        # (retrieve_contract_evidence, get_definitions, draft_grounded_answer).
         result = run_agent(
             "What is the termination notice period?",
             budget=LoopBudget(max_seconds=30),
@@ -33,15 +35,7 @@ class SecurityIntegrationTests(unittest.TestCase):
             for event in result["events"]
             if event.get("phase") == "ACT" and "tool" in event
         ]
-        self.assertTrue(
-            all(
-                tool in {
-                    "retrieve_contract_evidence",
-                    "draft_grounded_answer",
-                }
-                for tool in tools
-            )
-        )
+        self.assertTrue(all(tool in ALLOWED_TOOLS for tool in tools))
 
 
 if __name__ == "__main__":

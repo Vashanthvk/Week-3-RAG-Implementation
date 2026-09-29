@@ -1,0 +1,29 @@
+system,id,dependency,pass,latency_s,tokens,cost,steps,stop_reason,answer
+agent,1,False,True,56.3934,5575,0.002788,5,stuck_loop_forced_draft,"The annual salary of the employee is USD 72,000."
+agent,2,False,True,27.2515,5618,0.002809,5,stuck_loop_forced_draft,"The monthly rent in the lease agreement is USD 1,500, payable before the 5th of each month."
+agent,3,False,False,25.9399,5607,0.002804,5,stuck_loop_forced_draft,I don't know based on the provided contracts.
+agent,4,False,True,24.9376,5583,0.002792,5,stuck_loop_forced_draft,"The security deposit for the leased property is USD 3,000, which is refundable subject to inspection."
+agent,5,False,True,26.7593,5593,0.002796,5,stuck_loop_forced_draft,"According to the Employment_Agreement.pdf, the employee receives 10 sick leave days each year."
+agent,6,False,True,27.1402,5683,0.002841,5,stuck_loop_forced_draft,The Effective Date of the Master Services Agreement is 1 April 2025.
+agent,7,True,True,47.2468,8604,0.004302,7,stuck_loop_forced_draft,"Based on the contract context, specifically the Master Services Agreement (Document: Master_Service_Agreement.pdf, Page: 1), the ""Cause"" is defined as a material breach that the breaching party fails to cure within fifteen (15) days after receiving written notice describing the breach.
+
+Since Delta sent Orion a written breach notice on 10 May 2025, and the ""Cause"" is defined as a material breach that must be cured within 15 days of receiving written notice, we can calculate the expiration date of the cure period.
+
+The cure period would expire on 25 May 2025 (10 May 2025 + 15 days)."
+agent,8,True,True,26.4692,5839,0.00292,5,stuck_loop_forced_draft,"Based on the Master_Service_Agreement.pdf, the earliest date the Agreement can terminate is 31 July 2025, as calculated from the Notice Period of 30 days, applied to 01 July 2025."
+agent,9,True,True,41.9546,8364,0.004182,7,stuck_loop_forced_draft,"The length of the Initial Term is 12 months, and the Termination Notice Period is 45 days."
+agent,10,False,True,23.8433,5661,0.00283,5,stuck_loop_forced_draft,The Effective Date of the Software License Agreement is 15 September 2025.
+fixed_workflow,1,False,True,2.3947,411,0.000205,2,answer_ready,"The annual salary of the employee is USD 72,000."
+fixed_workflow,2,False,True,2.9709,414,0.000207,2,answer_ready,"The monthly rent in the lease agreement is USD 1,500, payable before the 5th of each month."
+fixed_workflow,3,False,True,2.5173,406,0.000203,2,answer_ready,The Non-Disclosure Agreement remains effective for 3 years from the effective date.
+fixed_workflow,4,False,True,2.8584,412,0.000206,2,answer_ready,"The security deposit for the leased property is USD 3,000, which is refundable subject to inspection."
+fixed_workflow,5,False,True,2.8281,421,0.00021,2,answer_ready,"According to the Employment_Agreement.pdf, the employee receives 10 sick leave days each year."
+fixed_workflow,6,False,True,2.3936,404,0.000202,2,answer_ready,The Effective Date of the Master Services Agreement is 1 April 2025.
+fixed_workflow,7,True,True,9.57,633,0.000316,3,answer_ready,"Based on the contract context, specifically the Master Services Agreement (Document: Master_Service_Agreement.pdf, Page: 1), the ""Cause"" is defined as a material breach that the breaching party fails to cure within fifteen (15) days after receiving written notice describing the breach.
+
+Since Delta sent Orion a written breach notice on 10 May 2025, and the ""Cause"" is defined as a material breach that must be cured within 15 days of receiving written notice, we can calculate the expiration date of the cure period.
+
+The cure period would expire on 25 May 2025 (10 May 2025 + 15 days)."
+fixed_workflow,8,True,True,3.921,526,0.000263,3,answer_ready,"Based on the contract context, the earliest date the Agreement can terminate is 31 July 2025, as calculated from the Notice Period of 30 days, applied to the date of written notice (1 July 2025)."
+fixed_workflow,9,True,True,3.9955,524,0.000262,3,answer_ready,"The length of the Initial Term is 12 months, and the Termination Notice Period is 45 days."
+fixed_workflow,10,False,True,1.2398,417,0.000208,2,answer_ready,The Effective Date of the Software License Agreement is 15 September 2025.

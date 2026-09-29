@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "question": "What is the annual salary of the employee?",
+    "expected_keywords": ["72,000"],
+    "expected_source": "Employment_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": 2,
+    "question": "What is the monthly rent in the lease agreement?",
+    "expected_keywords": ["1,500"],
+    "expected_source": "Lease_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": 3,
+    "question": "How long does the Non-Disclosure Agreement remain effective after the effective date?",
+    "expected_keywords": ["3 years"],
+    "expected_source": "Non_Disclosure_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": 4,
+    "question": "What is the security deposit for the leased property?",
+    "expected_keywords": ["3,000"],
+    "expected_source": "Lease_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": 5,
+    "question": "How many sick leave days does the employee receive each year?",
+    "expected_keywords": ["10 sick leave"],
+    "expected_source": "Employment_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": 6,
+    "question": "What is the Effective Date of the Master Services Agreement?",
+    "expected_keywords": ["1 April 2025"],
+    "expected_source": "Master_Service_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  },
+  {
+    "id": 7,
+    "question": "Delta sent Orion a written breach notice on 10 May 2025 citing Cause under the Master Services Agreement. If Orion does not cure the breach, on what date does the cure period expire?",
+    "expected_keywords": ["25 May 2025"],
+    "expected_source": "Master_Service_Agreement.pdf",
+    "dependency": true,
+    "notes": "Requires resolving the defined term 'Cause' (15-day cure period) before the date can be computed -- the clause itself only names Cause, it never states the day count.",
+    "expected_paths": [
+      ["retrieve_contract_evidence", "get_definitions", "draft_grounded_answer"],
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "short_path_grounding_phrases": ["fifteen (15) days"],
+    "needed_steps": 3
+  },
+  {
+    "id": 8,
+    "question": "Orion wants to terminate the Master Services Agreement for convenience by giving the Notice Period and sends written notice on 1 July 2025. What is the earliest date the Agreement can terminate?",
+    "expected_keywords": ["31 July 2025"],
+    "expected_source": "Master_Service_Agreement.pdf",
+    "dependency": true,
+    "notes": "Requires resolving the defined term 'Notice Period' (30 days) before the date can be computed.",
+    "expected_paths": [
+      ["retrieve_contract_evidence", "get_definitions", "draft_grounded_answer"],
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "short_path_grounding_phrases": ["thirty (30) days"],
+    "needed_steps": 3
+  },
+  {
+    "id": 9,
+    "question": "Under the Software License Agreement, what is the length of the Initial Term, and what is the Termination Notice Period?",
+    "expected_keywords": [["12 month", "twelve (12) months"], ["45 day", "forty-five (45) days"]],
+    "expected_source": "Software_License_Agreement.pdf",
+    "dependency": true,
+    "notes": "Two separate defined terms ('Initial Term', 'Termination Notice Period') must each be resolved; neither value is stated in the Termination clause itself.",
+    "expected_paths": [
+      ["retrieve_contract_evidence", "get_definitions", "get_definitions", "draft_grounded_answer"],
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "short_path_grounding_phrases": ["twelve (12) months", "forty-five (45) days"],
+    "needed_steps": 4
+  },
+  {
+    "id": 10,
+    "question": "What is the Effective Date of the Software License Agreement?",
+    "expected_keywords": ["15 September 2025"],
+    "expected_source": "Software_License_Agreement.pdf",
+    "dependency": false,
+    "expected_paths": [
+      ["retrieve_contract_evidence", "draft_grounded_answer"]
+    ],
+    "needed_steps": 2
+  }
+]

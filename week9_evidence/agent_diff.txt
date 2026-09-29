@@ -1,0 +1,19 @@
+$ git diff --no-index --stat mcp_agent_snapshot_before_server_two.py mcp_agent_snapshot_after_server_two.py
+(no output -- zero changed lines)
+exit code: 0
+
+63ad6fe1a56d89d74df50719985e5c6441a64903d03bf8ac398a8a805f32d675  mcp_agent_snapshot_before_server_two.py
+63ad6fe1a56d89d74df50719985e5c6441a64903d03bf8ac398a8a805f32d675  mcp_agent_snapshot_after_server_two.py
+
+IDENTICAL: True
+
+Proof: mcp_agent.py's bytes were snapshotted before running tool
+discovery against a server-one-only config, and again after running
+it against the real (server-one + server-two) config -- the SAME
+unmodified code handled both, with its own checksum unchanged
+across the whole test. Adding server two changed only
+mcp_servers/mcp_config.json (see mcp_config_diff.txt); mcp_agent.py
+contains zero code that names a specific tool, server, or
+contract-repository concept -- every tool name/description shown to
+the model comes from the live tools/list responses captured in
+wire.json and tool_counts.md.

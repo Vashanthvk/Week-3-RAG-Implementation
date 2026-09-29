@@ -1,0 +1,7 @@
+# Supply-chain risk note: contract-repository server (5 lines)
+
+1. **Who wrote it:** the knowledge team, not us — an internal-but-separate team's server, added to our agent's trust boundary by config alone, with no code review of `contract_repository_server.py` on our side beyond this exercise.
+2. **What it can reach:** only the small `contract_repository_data.json` file it reads at startup (contract ids, parties, effective dates, amendment summaries) — it has no filesystem, network, or credential access beyond that one file in this implementation.
+3. **What it logs:** nothing today — it has no logging statements at all, which is itself a risk (no audit trail of who looked up which contract), not a safety feature.
+4. **What a stolen token could do:** in this exercise there is no auth (stdio, local process) so "stolen token" maps to "anyone who can launch the process" — in a real remote deployment, a stolen token would let an attacker enumerate every contract id, party name, and amendment history in the repository, including ones under NDA, with no rate limit or scope restriction visible in its three tools.
+5. **Ship or don't:** don't ship as-is for anything beyond this exercise — add logging, an auth-scoped token (see the bonus's per-tool denial idea), and confirm with the knowledge team what `contract_repository_data.json`'s real-world equivalent actually contains before trusting it with production contract data.
