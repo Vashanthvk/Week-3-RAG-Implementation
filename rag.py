@@ -772,6 +772,8 @@ from hybrid_retrieval import (
 )
 
 from trace_logger import save_trace
+from observability import PROMPT_VERSION, context_id, estimate_tokens, span
+from time import perf_counter
 
 
 # ============================================================
@@ -1177,6 +1179,10 @@ I don't know based on the provided contracts.
 13. Every factual claim must be supported by the
     retrieved contract context.
 
+14. For a termination question, name the contract and the exact notice
+    period or condition stated in its retrieved context. Never transfer a
+    termination clause from one contract to another.
+
 CONTRACT CONTEXT:
 
 {context}
@@ -1256,6 +1262,8 @@ def ask_question(
     print("STARTING RETRIEVAL")
     print("=" * 70)
 
+    request_spans = []
+    retrieval_started = perf_counter()
     retrieval = retrieve_with_retry(
         vector_store,
         documents,
@@ -1266,6 +1274,13 @@ def ask_question(
     results = retrieval[
         "results"
     ]
+    request_spans.append(span(
+        "retrieval", retrieval_started, stage="retrieval",
+        output_tokens=estimate_tokens("".join(
+            item["document"].get("content", "") for item in results
+        )),
+        retrieved_context_ids=[],
+    ))
 
     print("\n")
     print("=" * 70)
@@ -1345,6 +1360,14 @@ def ask_question(
     context = build_context(
         results
     )
+    request_spans[0]["retrieved_context_ids"] = [
+        context_id(
+            item["document"]["metadata"].get("source", "Unknown"),
+            item["document"]["metadata"].get("page_label", item["document"]["metadata"].get("page", 1)),
+            item["document"].get("content", ""),
+        )
+        for item in results
+    ]
 
     # ========================================================
     # SOURCES
@@ -1401,6 +1424,8 @@ def ask_question(
                 results=results,
                 sources=sources,
                 model_name=MODEL_NAME,
+                spans=request_spans,
+                prompt_version=PROMPT_VERSION,
             )
 
             print("\n")
@@ -1428,10 +1453,17 @@ def ask_question(
     print("GENERATING ANSWER")
     print("=" * 70)
 
+    generation_started = perf_counter()
     answer = generate_answer(
         question,
         context
     )
+    request_spans.append(span(
+        "generation", generation_started, stage="generation",
+        input_tokens=estimate_tokens(build_answer_prompt(question, context)),
+        output_tokens=estimate_tokens(answer),
+        provider_usage="estimated_local_ollama",
+    ))
 
     # ========================================================
     # FINAL ANSWER
@@ -1469,6 +1501,8 @@ def ask_question(
             results=results,
             sources=sources,
             model_name=MODEL_NAME,
+            spans=request_spans,
+            prompt_version=PROMPT_VERSION,
         )
 
         print("\n")

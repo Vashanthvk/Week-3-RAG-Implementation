@@ -4,6 +4,15 @@ Python eval.py --benchmark
 Python agent_loop_eval.py
 streamlit run app.py
 
+Week 10 Task Set F:
+
+- `venv\Scripts\activate`
+- Start Ollama and ensure the configured model is available (`ollama serve`, then `ollama pull llama3.2` if needed).
+- `python multi_agent_race.py` runs the same 10 cases from `race_questions.json` through the single agent and contract squad, then writes `race_evidence/race_table.md`, `handoffs.log`, `multiplier.md`, `failure_case.md`, `verdict.md`, `agent_card.json`, and `a2a_failure_mapping.md`.
+- `streamlit run app.py` opens the UI. Existing assistant is the default; select `Contract squad` for a single question or `Week 10 race` for the evidence dashboard.
+- `python -m unittest discover -s tests -p "test*.py"` runs regression tests.
+- `python -m unittest discover -s tests -p "test_multi_agent.py"` runs the multi-agent tests.
+
 Week 7 agent-loop deliverable:
 
 - `agent_loops.py` implements a visible PLAN -> ACT -> OBSERVE loop.
@@ -89,4 +98,4 @@ week 4 final architecture
 
 week 8 :
 
-ollama serve - to run ollama 
+ollama serve - to run ollama

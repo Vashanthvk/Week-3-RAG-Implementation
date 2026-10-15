@@ -1,0 +1,27 @@
+{
+  "name": "contract-squad-orchestrator",
+  "description": "Manager delegating contract retrieval and defined-term resolution.",
+  "skills": [
+    "contract_clause_retrieval",
+    "defined_term_lookup",
+    "grounded_contract_answer"
+  ],
+  "input_modes": [
+    "text/plain",
+    "application/json"
+  ],
+  "output_modes": [
+    "text/plain",
+    "application/json"
+  ],
+  "authentication": {
+    "schemes": [
+      "none"
+    ],
+    "note": "local evaluation workflow"
+  },
+  "specialists": [
+    "clause-worker",
+    "defined-terms-worker"
+  ]
+}

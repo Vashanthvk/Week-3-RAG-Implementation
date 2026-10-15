@@ -1,0 +1,24 @@
+{"arm": "orchestrator", "case": 1, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "clause-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 1, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "orchestrator", "sender": "clause-worker", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 1, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "answer-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 1, "completion_tokens": 14, "prompt_tokens": 435, "receiver": "orchestrator", "sender": "answer-worker", "status": "ok", "tokens": 449}
+{"arm": "orchestrator", "case": 2, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "clause-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 2, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "orchestrator", "sender": "clause-worker", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 2, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "answer-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 2, "completion_tokens": 25, "prompt_tokens": 427, "receiver": "orchestrator", "sender": "answer-worker", "status": "ok", "tokens": 452}
+{"arm": "orchestrator", "case": 3, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "clause-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 3, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "orchestrator", "sender": "clause-worker", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 3, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "answer-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 3, "completion_tokens": 18, "prompt_tokens": 426, "receiver": "orchestrator", "sender": "answer-worker", "status": "ok", "tokens": 444}
+{"arm": "orchestrator", "case": 4, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "clause-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 4, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "orchestrator", "sender": "clause-worker", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 4, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "answer-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 4, "completion_tokens": 23, "prompt_tokens": 427, "receiver": "orchestrator", "sender": "answer-worker", "status": "ok", "tokens": 450}
+{"arm": "orchestrator", "case": 5, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "clause-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 5, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "orchestrator", "sender": "clause-worker", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 5, "completion_tokens": 0, "prompt_tokens": 0, "receiver": "answer-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator", "case": 5, "completion_tokens": 21, "prompt_tokens": 438, "receiver": "orchestrator", "sender": "answer-worker", "status": "ok", "tokens": 459}
+{"arm": "orchestrator_failure_injected", "case": 5, "completion_tokens": 0, "failure_injected": true, "prompt_tokens": 0, "receiver": "clause-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator_failure_injected", "case": 5, "completion_tokens": 0, "failure_injected": true, "prompt_tokens": 0, "receiver": "orchestrator", "sender": "clause-worker", "status": "ok", "tokens": 0}
+{"arm": "orchestrator_failure_injected", "case": 5, "completion_tokens": 0, "failure_injected": true, "prompt_tokens": 0, "receiver": "answer-worker", "sender": "orchestrator", "status": "ok", "tokens": 0}
+{"arm": "orchestrator_failure_injected", "case": 5, "completion_tokens": 21, "failure_injected": true, "prompt_tokens": 438, "receiver": "orchestrator", "sender": "answer-worker", "status": "ok", "tokens": 459}

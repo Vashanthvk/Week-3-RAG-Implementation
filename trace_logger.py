@@ -2,6 +2,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from observability import PROMPT_VERSION, context_id, cost_by_stage
+
 
 TRACE_DIR = Path("traces")
 TRACE_FILE = TRACE_DIR / "traces.jsonl"
@@ -29,6 +31,9 @@ def save_trace(
     results,
     sources,
     model_name,
+    spans=None,
+    prompt_version=PROMPT_VERSION,
+    input_type="text",
 ):
     """
     Save one complete RAG execution as a JSONL trace.
@@ -57,6 +62,11 @@ def save_trace(
 
         retrieved_chunks.append(
             {
+                "context_id": context_id(
+                    metadata.get("source", "Unknown"),
+                    metadata.get("page_label", metadata.get("page", 1)),
+                    document.get("content", ""),
+                ),
                 "rank": result.get("rank"),
 
                 "rrf_score": result.get(
@@ -98,6 +108,8 @@ def save_trace(
         "question": question,
 
         "model": model_name,
+        "prompt_version": prompt_version,
+        "input_type": input_type,
 
         "retrieval": {
             "attempt": retrieval.get(
@@ -118,6 +130,8 @@ def save_trace(
         "final_answer": answer,
 
         "sources": sources,
+        "spans": spans or [],
+        "cost_by_stage_usd": cost_by_stage(spans or []),
     }
 
     with TRACE_FILE.open(

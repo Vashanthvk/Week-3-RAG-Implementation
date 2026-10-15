@@ -506,8 +506,16 @@ def draft_grounded_answer(question: str, state: AgentState) -> dict[str, Any]:
             f"Blocked draft tool: {tool_security.reason}.",
             reason=tool_security.reason,
         )
-        return {"answer": state.answer, "sources": [], "security_blocked": True}
+        return {
+            "answer": state.answer,
+            "sources": [],
+            "security_blocked": True,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+        }
 
+    prompt_tokens = 0
+    completion_tokens = 0
     if should_refuse_answer(question, state.results) and not state.definitions:
         state.answer = REFUSAL_MESSAGE
     else:
@@ -528,6 +536,8 @@ def draft_grounded_answer(question: str, state: AgentState) -> dict[str, Any]:
 
         usage = generate_answer_with_usage(question, context)
         state.answer = usage["answer"]
+        prompt_tokens = usage["prompt_tokens"]
+        completion_tokens = usage["completion_tokens"]
         _apply_usage(state, state.budget, usage["prompt_tokens"], usage["completion_tokens"])
 
     state.sources = _format_sources(state.results)
@@ -548,12 +558,20 @@ def draft_grounded_answer(question: str, state: AgentState) -> dict[str, Any]:
             "sources": state.sources,
             "security_blocked": True,
             "security_reason": output_security.reason,
+            "prompt_tokens": prompt_tokens,
+            "completion_tokens": completion_tokens,
         }
 
     state.memory.append(
         f"drafted answer from {len(state.results)} chunks and {len(state.definitions)} definitions"
     )
-    return {"answer": state.answer, "sources": state.sources, "security_blocked": False}
+    return {
+        "answer": state.answer,
+        "sources": state.sources,
+        "security_blocked": False,
+        "prompt_tokens": prompt_tokens,
+        "completion_tokens": completion_tokens,
+    }
 
 
 def _format_sources(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
